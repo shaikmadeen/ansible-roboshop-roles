@@ -10,13 +10,13 @@
   ansible.builtin.file:
     path: /app
     state: directory
-- name: "download {{component}} application"
+- name: download cart application
   ansible.builtin.get_url:
-    url: "https://roboshop-builds.s3.amazonaws.com/{{component}}.zip"
+    url: https://roboshop-builds.s3.amazonaws.com/cart.zip
     dest: /tmp
-- name: extract {{component}} application
+- name: extract cart application
   ansible.builtin.unarchive:
-    src: /tmp/{{component}}.zip
+    src: /tmp/cart.zip
     dest: /app
     remote_src: yes
     

@@ -8,4 +8,4 @@
     state: installed
 
 - name: load catalogue data
-  ansible.builtin.shell: mongo --host 10.0.1.123 < /app/schema/{{component}}.js
+  ansible.builtin.shell: mongo --host 10.0.1.123 < /app/schema/catalogue.js

@@ -1,4 +1,4 @@
-[user]=centos
+ansible_user=centos
 
 [mongodb]
 10.0.1.131

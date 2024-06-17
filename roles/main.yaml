@@ -1,5 +1,5 @@
 - name: installing roboshop project
-  hosts: redis
+  hosts: cart
   become: yes
   roles:
-  - redis
+  - cart

@@ -1,14 +1,14 @@
-- name: Copy cart service
+- name: Copy user service
   ansible.builtin.copy:
-    src: cart.service
-    dest: /etc/systemd/system/cart.service
+    src: user.service
+    dest: /etc/systemd/system/user.service
 
 - name: deamon realod and start
   ansible.builtin.systemd_service:
     daemon_reload: true
 
-- name: start and enable cart
+- name: start and enable user
   ansible.builtin.service:
-    name: cart
+    name: user
     state: started
     enabled: yes

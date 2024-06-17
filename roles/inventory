@@ -1,4 +1,2 @@
-ansible_user=centos
-
 [mongodb]
-10.0.1.131
+10.0.1.131 ansible_user=centos

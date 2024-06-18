@@ -1,7 +1,7 @@
 - name: installing roboshop project
-  hosts: shipping
+  hosts: rabbitmq
   vars_files:
   - variables.yaml
   become: yes
   roles:
-  - shipping
+  - rabbitmq

@@ -1,5 +1,5 @@
 - name: installing roboshop project
-  hosts: mysql
+  hosts: shipping
   become: yes
   roles:
-  - mysql
+  - shipping

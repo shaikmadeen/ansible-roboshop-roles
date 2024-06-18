@@ -10,20 +10,20 @@
   ansible.builtin.file:
     path: /app
     state: directory
-- name: download user application
+- name: download shipping application
   ansible.builtin.get_url:
-    url: https://roboshop-builds.s3.amazonaws.com/user.zip
+    url: https://roboshop-builds.s3.amazonaws.com/shipping.zip
     dest: /tmp
 - name: extract user application
   ansible.builtin.unarchive:
-    src: /tmp/user.zip
+    src: /tmp/shipping.zip
     dest: /app
     remote_src: yes
     
-- name: Install dependencies
-  ansible.builtin.command: npm install
-  args:
-    chdir: /app
+# - name: Install dependencies
+#   ansible.builtin.command: npm install
+#   args:
+#     chdir: /app
 
 
 

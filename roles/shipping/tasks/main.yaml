@@ -1,0 +1,37 @@
+- name: install maveen
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: maven-setup.yaml
+
+- name: setup application
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: app-setup.yaml
+
+- name: install dependencies
+  ansible.builtin.command: mvn clean package
+  args:
+    chdir: /app
+
+- name: rename jar file
+  ansible.builtin.command: mv target/shipping-1.0.jar shipping.jar
+  args:
+    chdir: /app
+ 
+- name: systemd-setup
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: systemd-setup.yaml
+
+- name: load mysql schema
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: load-mysql schema
+
+- name: start and enable shipping
+  ansible.builtin.service:
+      name: shipping
+      state: restarted
+      enabled: yes  
+
+

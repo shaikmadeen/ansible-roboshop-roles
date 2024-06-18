@@ -3,7 +3,7 @@
     name: mysql
     state: present
 
-- name: load cities data
+- name: load mqsql schema
   ansible.builtin.shell: mysql -h 10.0.1.121 -uroot -pRoboShop@1 < /app/schema/shipping.sql 
   when: schema.stdout != "1"
 

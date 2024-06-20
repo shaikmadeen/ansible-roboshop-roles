@@ -1,14 +1,14 @@
-- name: Copy payment service
+- name: "Copy {{component}} service"
   ansible.builtin.copy:
-    src: payment.service
-    dest: /etc/systemd/system/payment.service
+    src: "{{component}}.service"
+    dest: "/etc/systemd/system/{{component}}.service"
 
 - name: deamon realod and start
   ansible.builtin.systemd_service:
     daemon_reload: true
 
-- name: start and enable payment
+- name: start and enable 
   ansible.builtin.service:
-    name: payment
+    name: "{{component}}"
     state: started
     enabled: yes

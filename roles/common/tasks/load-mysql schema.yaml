@@ -7,12 +7,12 @@
 #   ansible.builtin.shell:  mysql -h 10.0.1.122 -uroot -pRoboShop@1 -sN -e "SELECT COUNT(*) FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = 'cities'"
 #   register: schema
 
-- name: print output
-  ansible.builtin.debug:
-    msg: "schema output: {{schema}}"
+# - name: print output
+#   ansible.builtin.debug:
+#     msg: "schema output: {{schema}}"
 
 - name: load cities data
   ansible.builtin.shell: "mysql -h 10.0.1.122 -uroot -pRoboShop@1 < /app/schema/shipping.sql"
-  when: schema.stdout != "1"
+  
 
 

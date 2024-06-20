@@ -11,8 +11,8 @@
 #   ansible.builtin.debug:
 #     msg: "schema output: {{schema}}"
 
-- name: load cities data
-  ansible.builtin.shell: "mysql -h 10.0.1.122 -uroot -pRoboShop@1 < /app/schema/shipping.sql"
+# - name: load cities data
+#   ansible.builtin.shell: "mysql -h 10.0.1.122 -uroot -pRoboShop@1 < /app/schema/shipping.sql"
   
 
 
